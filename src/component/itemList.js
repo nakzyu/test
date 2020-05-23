@@ -6,15 +6,15 @@ import "./itemList.css";
 const ItemList = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items);
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState([]);
 
   useEffect(() => {
     dispatch(getItemList());
   }, []);
 
   useEffect(() => {
-    items.length && setSelected(items);
-  });
+    setSelected(items);
+  }, [items]);
 
   const handleSelected = (category) => {
     console.log(category, selected, items);
@@ -61,7 +61,25 @@ const ItemList = () => {
           </button>
         </div>
       )}
-      <ul>{}</ul>
+      <div className="ss">
+        <ul className="item-list">
+          {selected.length &&
+            selected.map((item) => (
+              <li className="item">
+                <div className="item-image">
+                  <img src={item.imgUrl} alt="food" />
+                </div>
+                <div className="item-content">
+                  <div className="item-name">{item.name}</div>
+                  <div className="item-summary">{item.summary}</div>
+                  <div className="item-price">{item.details[0].price}~</div>
+                  <div className="item-size">{item.summaryDetail}~</div>
+                  <div>{item.isSold && item.soldMsg}</div>
+                </div>
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 };

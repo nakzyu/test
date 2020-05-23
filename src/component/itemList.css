@@ -5,3 +5,31 @@
 .tap {
   margin: 20px;
 }
+.item-list {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.item-list::after {
+  content: "";
+  flex: 0 0 23%;
+  padding: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 22%;
+  padding: 10px;
+}
+
+.item img {
+  object-fit: cover;
+  width: 100%;
+}
