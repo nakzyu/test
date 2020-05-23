@@ -25,7 +25,7 @@ function Banner() {
 
   useEffect(() => {
     fetchData();
-  }, [data]);
+  }, []);
 
   return (
     <CarouselProvider

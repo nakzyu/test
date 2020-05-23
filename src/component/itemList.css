@@ -1,0 +1,7 @@
+.taps {
+  display: flex;
+}
+
+.tap {
+  margin: 20px;
+}
