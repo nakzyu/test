@@ -33,7 +33,7 @@ function Banner() {
       naturalSlideHeight={240}
       totalSlides={5}
       infinite={true}
-      interval={5000}
+      interval={5000} // 5초마다 autoplay
       isPlaying={true}
       currentSlide={1}
     >

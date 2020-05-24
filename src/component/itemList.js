@@ -16,10 +16,11 @@ const ItemList = () => {
     setSelected(items);
   }, [items]);
 
+  // tab을 눌렀을때 반환할 상품 배열을 결정하는 함수
   const handleSelected = (category) => {
+    // category에 따라 배열을 filter 한 후 반환
     const filterdArray = (param) => {
-      const result = items.slice().filter((item) => item.category === param);
-      return result;
+      return items.slice().filter((item) => item.category === param);
     };
 
     switch (category) {
@@ -65,7 +66,7 @@ const ItemList = () => {
           selected.map((item) => (
             <li key={item.id} className="item">
               <div className="item-image">
-                {item.isSold && (
+                {item.isSold && ( //isSold가 true일때 soldMsg를 출력
                   <div className="item-soldMsg">{item.soldMsg}</div>
                 )}
                 <img
