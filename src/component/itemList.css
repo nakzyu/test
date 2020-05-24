@@ -8,18 +8,11 @@
 .item-list {
   width: 100%;
   list-style: none;
-  margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
   justify-content: center;
-}
-
-.item-list::after {
-  content: "";
-  flex: 0 0 23%;
-  padding: 10px;
+  color: #5f5f5f;
 }
 
 .item {
@@ -29,7 +22,83 @@
   padding: 10px;
 }
 
+.item-image {
+  position: relative;
+  overflow: hidden;
+}
+
 .item img {
   object-fit: cover;
   width: 100%;
+  height: 100%;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 13px;
+  margin-bottom: 4px;
+  margin-top: 3px;
+}
+
+.item-summary {
+  font-size: 12px;
+}
+
+.item-price {
+  color: #23af6e;
+  display: flex;
+  align-items: center;
+}
+
+.item-size {
+  font-size: 11px;
+}
+
+.won {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.item-balloon {
+  font-size: 12px;
+  color: #f38a00;
+}
+
+.is-sold {
+  filter: brightness(0.4);
+}
+
+.item-soldMsg {
+  position: absolute;
+  z-index: 100;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item-soldMsg-text {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.item-tags {
+  display: flex;
+}
+
+.item-tag {
+  color: #fa745e;
+  padding: 2px;
+  font-size: 10px;
+  margin: 1px;
+  border: 1px solid#FA745E;
+  border-radius: 8px;
+}
+
+.first-tag {
+  color: white;
+  background: #fa745e;
 }

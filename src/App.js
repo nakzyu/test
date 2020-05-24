@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       FRESHCODE
       <Banner />
-      프레쉬코드 샐러드
+      Salads 🥗🥗🥗
       <ItemList />
     </div>
   );

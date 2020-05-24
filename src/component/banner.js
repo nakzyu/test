@@ -55,7 +55,9 @@ function Banner() {
       <Slider>
         {data &&
           data.banners.map((image, index) => (
-            <Slide index={index}>{<Image src={image.imgUrl} />} </Slide>
+            <Slide key={index} index={index}>
+              {<Image src={image.imgUrl} />}
+            </Slide>
           ))}
       </Slider>
     </CarouselProvider>

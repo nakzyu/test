@@ -17,8 +17,6 @@ const ItemList = () => {
   }, [items]);
 
   const handleSelected = (category) => {
-    console.log(category, selected, items);
-
     const filterdArray = (param) => {
       const result = items.slice().filter((item) => item.category === param);
       return result;
@@ -61,25 +59,53 @@ const ItemList = () => {
           </button>
         </div>
       )}
-      <div className="ss">
-        <ul className="item-list">
-          {selected.length &&
-            selected.map((item) => (
-              <li className="item">
-                <div className="item-image">
-                  <img src={item.imgUrl} alt="food" />
+
+      <ul className="item-list">
+        {selected.length &&
+          selected.map((item) => (
+            <li key={item.id} className="item">
+              <div className="item-image">
+                {item.isSold && (
+                  <div className="item-soldMsg">{item.soldMsg}</div>
+                )}
+                <img
+                  className={`${item.isSold ? "is-sold" : ""}`}
+                  src={item.imgUrl}
+                  alt="food"
+                />
+              </div>
+              <div className="item-content">
+                <div className="item-name">
+                  <strong>{item.name}</strong>
                 </div>
-                <div className="item-content">
-                  <div className="item-name">{item.name}</div>
-                  <div className="item-summary">{item.summary}</div>
-                  <div className="item-price">{item.details[0].price}~</div>
-                  <div className="item-size">{item.summaryDetail}~</div>
-                  <div>{item.isSold && item.soldMsg}</div>
+                <div className="item-summary">{item.summary}</div>
+                <div
+                  className={`item-price ${
+                    item.isSold ? "item-soldMsg-text" : ""
+                  }`}
+                >
+                  <strong>{item.details[0].price}</strong>
+                  <div className="won">원~</div>
                 </div>
-              </li>
-            ))}
-        </ul>
-      </div>
+                {item.balloon.length > 1 ? (
+                  <strong className="item-balloon">{item.balloon}</strong>
+                ) : null}
+                <div className="item-size">
+                  {item.summaryDetail.split(" ").slice(1).join(" ")}
+                </div>
+                <div className="item-tags">
+                  {item.tags.map((tag, index) => (
+                    <div
+                      className={`item-tag  ${index === 0 ? "first-tag" : ""}`}
+                    >
+                      {tag.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };
