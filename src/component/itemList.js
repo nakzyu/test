@@ -41,6 +41,7 @@ const ItemList = () => {
 
   return (
     <div>
+      <h1>2. Salads 🥗🥗🥗</h1>
       {items.length && (
         <div className="taps">
           <button className="tap" onClick={() => handleSelected("all")}>
@@ -88,7 +89,7 @@ const ItemList = () => {
                   <strong>{item.details[0].price}</strong>
                   <div className="won">원~</div>
                 </div>
-                {item.balloon.length > 1 ? (
+                {item.balloon.length > 1 && !item.isSold ? (
                   <strong className="item-balloon">{item.balloon}</strong>
                 ) : null}
                 <div className="item-size">

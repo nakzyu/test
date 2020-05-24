@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ReactCalendar from "react-calendar";
 import "./calendar.css";
 import "react-calendar/dist/Calendar.css";
@@ -33,7 +33,7 @@ const Calendar = () => {
 
   const fetchData = async () => {
     try {
-      await axios.get(" https://exam.freshcode.me/front/dayoff").then((res) => {
+      await axios.get("https://exam.freshcode.me/front/dayoff").then((res) => {
         // res를 handleDayoff 함수로 넘김
         handleDayoff(res.data.holidays);
       });
@@ -47,24 +47,27 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div className="calendar-container">
-      <ReactCalendar
-        onChange={onDateChange}
-        value={date}
-        tileDisabled={({ date, view }) =>
-          view === "month" &&
-          disabledDates.some(
-            (disabledDate) =>
-              date.getFullYear() === disabledDate.getFullYear() &&
-              date.getMonth() === disabledDate.getMonth() &&
-              date.getDate() === disabledDate.getDate()
-          )
-        }
-      />
-      <div className="calendar-status">
-        {moment(date.toLocaleDateString()).format("YYYY-MM-DD")}
+    <Fragment>
+      <h1>3. Calendar</h1>
+      <div className="calendar-container">
+        <ReactCalendar
+          onChange={onDateChange}
+          value={date}
+          tileDisabled={({ date, view }) =>
+            view === "month" &&
+            disabledDates.some(
+              (disabledDate) =>
+                date.getFullYear() === disabledDate.getFullYear() &&
+                date.getMonth() === disabledDate.getMonth() &&
+                date.getDate() === disabledDate.getDate()
+            )
+          }
+        />
+        <div className="calendar-status">
+          {moment(date.toLocaleDateString()).format("YYYY-MM-DD")}
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

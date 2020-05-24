@@ -7,16 +7,9 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      FRESHCODE
       <Banner />
-      Salads 🥗🥗🥗
       <ItemList />
-      Calendar
       <Calendar />
-      <div>d</div>
-      <div>d</div>
-      <div>d</div>
-      <div>d</div>
     </div>
   );
 }
