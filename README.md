@@ -37,8 +37,6 @@ react-calendar 라이브러리를 통해 캘린더를 구현했습니다.
 <br/>
 달력 옆에 moment.js 라이브러리를 통해 "yyyy-MM-dd" 형식으로 선택한 날짜를 출력할 수 있도록 했습니다.
 <br/>
-또한 오늘 날짜는 노란색으로 표시하도록 했습니다.
-<br/>
 
 ![Screenshot](./images/calendar.gif)
 
