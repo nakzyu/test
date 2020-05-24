@@ -124,7 +124,7 @@ const ItemList = () => {
                     {item.tags.map((tag, index) => (
                       <div
                         className={`item-tag  ${
-                          index === 0 ? "first-tag" : ""
+                          index === 0 ? "first-tag" : "" // first tag 일때 class추가
                         }`}
                       >
                         {tag.name.split(" ").join("")}

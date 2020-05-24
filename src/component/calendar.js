@@ -34,7 +34,6 @@ const Calendar = () => {
   const fetchData = async () => {
     try {
       await axios.get("https://exam.freshcode.me/front/dayoff").then((res) => {
-        // res를 handleDayoff 함수로 넘김
         handleDayoff(res.data.holidays);
       });
     } catch (err) {
