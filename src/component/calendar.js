@@ -64,7 +64,16 @@ const Calendar = () => {
           }
         />
         <div className="calendar-status">
-          {moment(date.toLocaleDateString()).format("YYYY-MM-DD")}
+          <div className="calendar-status_description_wrapper">
+            <div className="calendar-status_description">
+              <div className="square yellow"></div> : today (
+              {new Date().toLocaleDateString()})
+            </div>
+            <div className="calendar-status_description">
+              <div className="square gray"></div> : dayoff (선택할 수 없음)
+            </div>
+          </div>
+          선택한 날짜: {moment(date.toLocaleDateString()).format("YYYY-MM-DD")}
         </div>
       </div>
     </Fragment>

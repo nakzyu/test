@@ -2,4 +2,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 400px;
+}
+
+.calendar-status {
+  margin-left: 10px;
+}
+
+.calendar-status_description {
+  margin: 5px;
+  display: flex;
+}
+
+.calendar-status_description_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+}
+
+.yellow {
+  background: #ffffa9;
+}
+
+.gray {
+  background: #e6e6e6;
 }
