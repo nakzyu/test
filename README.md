@@ -7,7 +7,7 @@ cors 플러그인 설치가 필요합니다.
 
 ## Features
 
-### 배너 carousel
+### 1. 배너 carousel
 
 5초마다 무한히 반복되는 배너입니다.
 <br/>
@@ -18,7 +18,7 @@ cors 플러그인 설치가 필요합니다.
 
 ![Screenshot](./images/banner.gif)
 
-### 상품 목록
+### 2. 상품 목록
 
 받아온 데이터는 redux를 통해 상태관리를 할 수 있도록 store에 저장했습니다.
 <br/>
@@ -27,7 +27,7 @@ tab 기능을 JS & CSS를 통해 구현했습니다.
 
 ![Screenshot](./images/itemlist.gif)
 
-### 캘린더
+### 3. 캘린더
 
 react-calendar 라이브러리를 통해 캘린더를 구현했습니다.
 <br/>
